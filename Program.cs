@@ -66,7 +66,7 @@ namespace 毛概Excel处理
                                         if (sheet.GetRow(i).GetCell(1).ToString() == "简答题")
                                         {
                                             daan += sheet.GetRow(i).GetCell(7).ToString();
-                                            break;
+                                            continue;
                                         }
                                         if (sheet.GetRow(i).GetCell(1).ToString() == "判断题")
                                         {
@@ -74,7 +74,7 @@ namespace 毛概Excel处理
                                                 daan += "正确";
                                             else if (current[ii] == 'B')
                                                 daan += "错误";
-                                            break;
+                                            continue;
                                         }
                                         if (sheet.GetRow(i).GetCell(1).ToString() == "填空题")
                                         {
@@ -86,7 +86,7 @@ namespace 毛概Excel处理
                                                 daan += sheet.GetRow(i).GetCell(9).ToString() + "\r\n";
                                             else if (current[ii] == 'D' && sheet.GetRow(i).GetCell(10) != null)
                                                 daan += sheet.GetRow(i).GetCell(10).ToString() + "\r\n";
-                                            break;
+                                            continue;
                                         }
                                         if (sheet.GetRow(i).GetCell(1).ToString() == "单选题"
                                             && current[ii] == 'D' && sheet.GetRow(i).GetCell(10).ToString() == "以上都对")
@@ -94,7 +94,7 @@ namespace 毛概Excel处理
                                             daan += "A." + sheet.GetRow(i).GetCell(7).ToString() + "\r\n";
                                             daan += "B." + sheet.GetRow(i).GetCell(8).ToString() + "\r\n";
                                             daan += "C." + sheet.GetRow(i).GetCell(9).ToString() + "\r\n";
-                                            break;
+                                            continue;
                                         }
                                         if (current[ii] == 'A' && sheet.GetRow(i).GetCell(7) != null)
                                             daan += "A." + sheet.GetRow(i).GetCell(7).ToString() + "\r\n";
